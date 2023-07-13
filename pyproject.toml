@@ -24,8 +24,8 @@ build-backend = "maturin"
 name = "h3o_polars_ext"
 version = "0.1.0"
 description = "Add h3o polars extenstions"
-authors = ["Sean Lane <git@sean.lane.sh>"]
-requires-python = "^3.10"
+authors = [{name = "Sean Lane"}]
+requires-python = ">=3.10"
 license = "MIT"
 classifiers = [
     "Programming Language :: Rust",
