@@ -1,8 +1,9 @@
 [tool.poetry]
-name = "h3o-polars-ext"
+name = "h3o_polars_ext"
 version = "0.1.0"
 description = "Add h3o polars extenstions"
 license = "MIT"
+authors = ["Sean Lane <git@sean.lane.sh>"]
 readme = "README.md"
 packages = [{include = "h3o_polars_ext"}]
 
@@ -10,7 +11,27 @@ packages = [{include = "h3o_polars_ext"}]
 python = "^3.10"
 
 
+[tool.poetry.group.dev.dependencies]
+maturin = "^1.1.0"
+pytest = "^7.4.0"
+pytest-benchmark = "^4.0.0"
+
 [build-system]
 requires = ["maturin>=0.13,<0.14"]
 build-backend = "maturin"
 
+[project]
+name = "h3o_polars_ext"
+version = "0.1.0"
+description = "Add h3o polars extenstions"
+authors = ["Sean Lane <git@sean.lane.sh>"]
+requires-python = "^3.10"
+license = "MIT"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: PyPy"
+]
+
+[project.urls]
+homepage = "https://github.com/neiybor/h3o_polars_ext"
+repository = "https://github.com/neiybor/h3o_polars_ext"
