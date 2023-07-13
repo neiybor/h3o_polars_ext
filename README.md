@@ -1,6 +1,8 @@
 # h3o-polars-ext
 
-Adds Polars extensions to use the h3o library from Python
+Adds Polars extensions to use the h3o library from Python.
+
+This currently more of a proof-of-concept than anything else, so caveat emptor.
 
 ## Installation
 

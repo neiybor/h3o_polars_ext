@@ -14,3 +14,4 @@ polars-lazy =  "*"
 polars = { version = "*", features = ["fmt"] }
 rayon = "1.6"
 pyo3-polars = { version = "0.4.1", features = ["lazy"] }
+h3o = "0.3.2"
