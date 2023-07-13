@@ -1,5 +1,5 @@
 from functools import partial
-from h3o_polars_ext import cell_to_parent
+import h3o_polars_ext as h3e
 
 import h3.api.basic_int as h3
 import numpy as np
@@ -13,7 +13,7 @@ def hexadecimal_to_int64(s: pl.Series) -> pl.Series:
     return first + second + third
 
 parent_f = partial(h3.cell_to_parent, res=5)
-NUM_VALS = 50_000_000
+NUM_VALS = 5_000_000
 print('Get starting series')
 start = hexadecimal_to_int64(pl.Series(['85283473fffffff','8526c38bfffffff','8526e387fffffff'] * NUM_VALS))
 
@@ -24,6 +24,11 @@ end_time = time.time()
 print(f"Duration of series apply: {end_time - start_time}")
 
 start_time = time.time()
-t2 = cell_to_parent(start, 5)
+t2 = h3e.cell_to_parent(start, 5)
 end_time = time.time()
 print(f"Duration of cell_to_parent: {end_time - start_time}")
+
+start_time = time.time()
+t3 = start.h3.cell_to_parent(5)
+end_time = time.time()
+print(f"Test series extension of cell_to_parent: {end_time - start_time}")
