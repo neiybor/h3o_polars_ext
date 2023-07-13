@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "h3o-polars-ext"
+version = "0.1.0"
+description = "Add h3o polars extenstions"
+license = "MIT"
+readme = "README.md"
+packages = [{include = "h3o_polars_ext"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["maturin>=0.13,<0.14"]
+build-backend = "maturin"
+
