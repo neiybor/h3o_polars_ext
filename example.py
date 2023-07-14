@@ -13,9 +13,14 @@ def hexadecimal_to_int64(s: pl.Series) -> pl.Series:
     return first + second + third
 
 parent_f = partial(h3.cell_to_parent, res=5)
-NUM_VALS = 5_000_000
+NUM_VALS = 10_000_000
 print('Get starting series')
-start = hexadecimal_to_int64(pl.Series(['85283473fffffff','8526c38bfffffff','8526e387fffffff'] * NUM_VALS))
+# start = hexadecimal_to_int64(pl.Series(['85283473fffffff','8526c38bfffffff','8526e387fffffff'] * NUM_VALS))
+start = pl.concat([
+    pl.select(pl.repeat(0x85283473fffffff, n=NUM_VALS, dtype=pl.UInt64)), 
+    pl.select(pl.repeat(0x8526c38bfffffff, n=NUM_VALS, dtype=pl.UInt64)), 
+    pl.select(pl.repeat(0x8526e387fffffff, n=NUM_VALS, dtype=pl.UInt64))
+]).to_series(0)
 
 print('Begin first test')
 start_time = time.time()
