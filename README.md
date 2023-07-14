@@ -6,7 +6,7 @@ This currently more of a proof-of-concept than anything else, so caveat emptor.
 
 ## Installation
 
-This is using [Poetry](https://python-poetry.org/) for dependency management.
+This project uses [Poetry](https://python-poetry.org/) for dependency management.
 
 Clone the repo and run `poetry install` to install dependencies.
 

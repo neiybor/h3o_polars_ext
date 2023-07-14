@@ -12,14 +12,18 @@ python = "^3.10"
 pyarrow = "^12.0.1"
 polars = "^0.18.7"
 
-
 [tool.poetry.group.dev.dependencies]
 maturin = "^1.1.0"
 pytest = "^7.4.0"
 pytest-benchmark = "^4.0.0"
 
+[tool.maturin]
+include = ["LICENSE", "README.md"]
+bindings = "pyo3"
+compatibility = "manylinux2014"
+
 [build-system]
-requires = ["maturin>=0.13,<0.14"]
+requires = ["maturin>=1.0,<2.0"]
 build-backend = "maturin"
 
 [project]
@@ -30,8 +34,10 @@ authors = [{name = "Sean Lane"}]
 requires-python = ">=3.10"
 license = "MIT"
 classifiers = [
+    'Development Status :: 3 - Alpha',
     "Programming Language :: Rust",
-    "Programming Language :: Python :: Implementation :: PyPy"
+    'Programming Language :: Python',
+    'License :: OSI Approved :: MIT License',
 ]
 
 [project.urls]
