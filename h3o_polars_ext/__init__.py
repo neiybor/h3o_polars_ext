@@ -1,4 +1,4 @@
-from .h3o_polars_ext import cell_to_parent
+from .h3o_polars_ext import cell_to_parent, grid_ring
 import polars as pl
 
 def register_namespace():
@@ -9,5 +9,8 @@ def register_namespace():
 
         def cell_to_parent(self, res: int) -> pl.Series:
             return cell_to_parent(self._s, res)
+        
+        def grid_ring(self, k: int) -> pl.Series:
+            return grid_ring(self._s, k)
         
 register_namespace()
