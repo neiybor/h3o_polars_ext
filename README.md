@@ -1,4 +1,12 @@
-# h3o-polars-ext
+# h3o-polars-ext [Deprecated]
+
+## DEPRECATION NOTICE
+
+**This project has been deprecated and is no longer maintained.**
+
+Please use [nmandery/h3ronpy](https://github.com/nmandery/h3ronpy) instead.
+
+---
 
 Adds Polars extensions to use the h3o library from Python.
 
